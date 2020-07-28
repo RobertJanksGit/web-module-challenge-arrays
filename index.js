@@ -62,10 +62,10 @@ For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainb
 
 function addFlavor(anArray, aFlavor){
      anArray.unshift(aFlavor);
-    return anArray;
+     console.log(anArray);
    
 }
- console.log(addFlavor(originalFlavors, "Rainbow Sherbert"))
+addFlavor(originalFlavors, "Rainbow Sherbert")
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -91,11 +91,11 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(/*code here*/){
-
-    /*code here*/
-
+function getFlavorByIndex(anArray, anIndex){
+    let callItem = anArray[anIndex];
+    return callItem;
 }
+console.log(getFlavorByIndex(originalFlavors, 6));
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -110,11 +110,12 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(/*code here*/){
-
-    /*code here*/
-
+function removeFlavorByName(anArray, aString){
+    let flavorIndex = anArray.indexOf(aString);
+    anArray.splice(flavorIndex, 1);
+    console.log(anArray);
 }
+removeFlavorByName(originalFlavors, "Vanilla");
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
